@@ -1,38 +1,38 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#111827">
-  <meta name="description" content="Star Pop · 星屿消消：20 步，点亮一座小小星岛。免费浏览器消除试玩。">
-  <title>Star Pop · 星屿消消</title>
+  <meta name="description" content="A calm color-matching puzzle. Clear connected tiles and reach 1,200 points in 20 moves. Free browser game for desktop and mobile.">
+  <title>Star Pop</title>
   <link rel="icon" href="./icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <header class="topbar"><a class="brand" href="./"><span class="brand-icon">✦</span> M01 <span class="brand-divider">/</span> PLAY LAB</a><button id="language" class="text-button" aria-label="Switch to English">EN ↗</button></header>
+  <header class="topbar"><a class="brand" href="./"><span class="brand-icon">✦</span> M01 <span class="brand-divider">/</span> PLAY LAB</a><button id="language" class="text-button" aria-label="切换到中文">中文 ↗</button></header>
   <main>
     <section class="intro">
-      <div class="eyebrow"><span></span> <span data-i18n="eyebrow">一座星岛，一点好心情</span></div>
-      <h1><span data-i18n="title">星屿消消</span><em>Star Pop.</em></h1>
-      <p class="lead" data-i18n="lead">把相邻的同色星块连在一起，<br>在 20 步里，点亮你的小岛。</p>
+      <div class="eyebrow"><span></span> <span data-i18n="eyebrow">A little island. A brighter day.</span></div>
+      <h1><span data-i18n="title">Star</span><em id="title-accent">Pop.</em></h1>
+      <p class="lead" data-i18n="lead">Connect neighboring tiles of the same color.<br> Light up your island in 20 moves.</p>
       <div class="instructions">
-        <div><span class="step">01</span><p><strong data-i18n="how1">点击相邻同色星块</strong><span data-i18n="detail1">至少 2 块即可消除，上下左右相连。</span></p></div>
-        <div><span class="step">02</span><p><strong data-i18n="how2">连得越多，分数越高</strong><span data-i18n="detail2">大组消除能让进度条飞快上涨。</span></p></div>
-        <div><span class="step">03</span><p><strong data-i18n="how3">20 步，挑战 1200 分</strong><span data-i18n="detail3">不赶时间，找到那一组漂亮的连击。</span></p></div>
+        <div><span class="step">01</span><p><strong data-i18n="how1">Tap a group of matching tiles</strong><span data-i18n="detail1">Two or more, connected up, down, left or right.</span></p></div>
+        <div><span class="step">02</span><p><strong data-i18n="how2">Bigger groups, brighter scores</strong><span data-i18n="detail2">Save a big group for a satisfying score boost.</span></p></div>
+        <div><span class="step">03</span><p><strong data-i18n="how3">20 moves. Reach 1,200 points.</strong><span data-i18n="detail3">Take your time. Find your next lovely combo.</span></p></div>
       </div>
-      <div class="intro-footer"><span class="tiny-star">✧</span><span data-i18n="free">免费试玩 · 无需登录 · 无广告</span></div>
+      <div class="intro-footer"><span class="tiny-star">✧</span><span data-i18n="free">Free to play · No login · No ads</span></div>
     </section>
     <section class="game" aria-label="Star Pop">
-      <div class="game-heading"><div><span class="eyebrow small" data-i18n="island">你的星岛</span><h2 data-i18n="round">让星星连成一片。</h2></div><span class="round-tag">01</span></div>
-      <div class="stats"><div><span data-i18n="score">当前分数</span><strong id="score">0</strong></div><div class="moves-stat"><span data-i18n="moves">剩余步数</span><strong id="moves">20</strong></div><div><span data-i18n="best">本机最高</span><strong id="best">0</strong></div></div>
-      <div class="progress-label"><span data-i18n="target">点亮目标</span><span><b id="percent">0</b>% <span class="muted">/ 1200</span></span></div>
-      <div class="progress" role="progressbar" aria-label="目标进度" aria-valuemin="0" aria-valuemax="1200" aria-valuenow="0"><span id="progress-fill"></span></div>
-      <div class="board-wrap"><div id="board" class="board" aria-label="消除棋盘"></div><div id="result" class="result" hidden><span class="result-icon">✦</span><h3 id="result-title"></h3><p id="result-detail"></p><button id="again" class="primary" data-i18n="again">再点亮一座岛</button></div></div>
-      <div class="game-bottom"><span id="message" role="status" aria-live="polite"></span><button id="restart" class="text-button" data-i18n="restart">↻ 重新开始</button></div>
+      <div class="game-heading"><div><span class="eyebrow small" data-i18n="island">YOUR LITTLE ISLAND</span><h2 data-i18n="round">Make the stars shine together.</h2></div><span class="round-tag">01</span></div>
+      <div class="stats"><div><span data-i18n="score">SCORE</span><strong id="score">0</strong></div><div class="moves-stat"><span data-i18n="moves">MOVES LEFT</span><strong id="moves">20</strong></div><div><span data-i18n="best">LOCAL BEST</span><strong id="best">0</strong></div></div>
+      <div class="progress-label"><span data-i18n="target">ISLAND PROGRESS</span><span><b id="percent">0</b>% <span class="muted">/ 1200</span></span></div>
+      <div class="progress" role="progressbar" aria-label="Goal progress" aria-valuemin="0" aria-valuemax="1200" aria-valuenow="0"><span id="progress-fill"></span></div>
+      <div class="board-wrap"><div id="board" class="board" aria-label="Game board"></div><div id="result" class="result" hidden><span class="result-icon">✦</span><h3 id="result-title"></h3><p id="result-detail"></p><button id="again" class="primary" data-i18n="again">Light up another island</button></div></div>
+      <div class="game-bottom"><span id="message" role="status" aria-live="polite"></span><button id="restart" class="text-button" data-i18n="restart">↻ Restart</button></div>
     </section>
   </main>
-  <footer><span>STAR POP <span class="brand-divider">/</span> v0.1</span><a href="./privacy.html" data-i18n="privacy">隐私说明</a></footer>
+  <footer><span>STAR POP <span class="brand-divider">/</span> v0.1</span><a href="./privacy.html" data-i18n="privacy">Privacy</a></footer>
   <script type="module" src="./app.mjs"></script>
 </body>
 </html>
